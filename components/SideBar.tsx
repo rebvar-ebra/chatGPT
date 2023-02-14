@@ -10,22 +10,21 @@ import NewChat from "./NewChat"
 function SideBar() {
   
   const {data: session} = useSession();
+
   const [chats, loading, error] = useCollection(
-    session && collection(db,'user',session.user?.email!,'chats')
-  )
-  
+    session && collection(db,'users',session.user?.email!,'client')
+  );
   return (
     <div className="p-2 flex flex-col h-screen">
         <div className="flex-1 ">
             <div>
-                {/* NewChat */}
                 <NewChat />
                 <div>
                     {/* Model Selections*/}
                 </div>
                 {/* Map through the chatrows */}
                 
-                {chats?.docs.map(chat=>(
+                {chats?.docs.map(chat => (
                   <ChatRow key={chat.id} id={chat.id} />
                 ))}
             </div>
