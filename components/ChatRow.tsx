@@ -17,7 +17,7 @@ function ChatRow ({id}:Props){
   const [active,setActive] = useState(false);
   const [messages] =useCollection(
     query(
-    collection(db,'users',session?.user?.email!,'client',id,'messages')
+    collection(db,'users',session?.user?.email!,'chats',id,'messages')
     
   ) )
 
@@ -27,7 +27,7 @@ function ChatRow ({id}:Props){
   },[pathname])
 
   const removeChat = async()=>{
-    await deleteDoc(doc(db,'users',session?.user?.email!,'client',id))
+    await deleteDoc(doc(db,'users',session?.user?.email!,'chats',id))
     router.replace("/")
   }
 

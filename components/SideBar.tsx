@@ -12,7 +12,7 @@ function SideBar() {
   const {data: session} = useSession();
 
   const [chats, loading, error] = useCollection(
-    session && query( collection(db,'users',session.user?.email!,'client'),orderBy("createAt","asc"))
+    session && query( collection(db,'users',session.user?.email!,'chats'),orderBy("createAt","asc"))
   );
   return (
     <div className="p-2 flex flex-col h-screen">
