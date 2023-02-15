@@ -17,10 +17,11 @@ function ChatInput({chatId}:Props) {
     const model ="text-davinci-003"
     const sendMessage = async(e:FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
-        if (!prompt) return
+        if (!prompt) return;
 
         const input= prompt.trim();
         setPrompt("");
+        console.log(input);
 
         const message:Message={
             text:input,
@@ -57,6 +58,7 @@ function ChatInput({chatId}:Props) {
                     })
                 })
     }
+
   return (
     <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm ">
         <form onSubmit={sendMessage} className="p-5 space-x-5 flex">
