@@ -1,4 +1,4 @@
-https://user-images.githubusercontent.com/84519054/219356211-734daf7f-38f9-4ac7-b695-8c6a6e35a494.png
+"https://user-images.githubusercontent.com/84519054/219356211-734daf7f-38f9-4ac7-b695-8c6a6e35a494.png"
 
 # Next.js + Tailwind CSS Example
 
